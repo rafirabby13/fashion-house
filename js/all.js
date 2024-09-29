@@ -9,11 +9,8 @@ const apiFunction = async ()=>{
   elementById('main').innerHTML='';
 
     data.map(data=>{
-        console.log(data);
-            let titlee = elementById('title')
-            let descriptione = elementById('description')
-            let categorye = elementById('category')
-            let pricee = elementById('price')
+       
+            
             let main = elementById('main')
             const {title, price, category,description, rating, image } = data;
             let div = document.createElement('div')
@@ -26,10 +23,10 @@ const apiFunction = async ()=>{
                 </figure>
                 <div class="card-body ">
                   <h2 id="title" class="card-title font-bold text-2xl">
-                    ${title}
+                    ${title.slice(0,20)}...
                     
                   </h2>
-                  <p id="description">${description}</p>
+                  <p id="description">${description.slice(0,130)}...</p>
                   <h1 id="price" class=" text-2xl">Price: <span class="font-bold">${price}</span></h1>
                   <div class="card-actions justify-end mt-auto">
                     <div id="category" class="badge badge-outline p-3">${category}</div>
